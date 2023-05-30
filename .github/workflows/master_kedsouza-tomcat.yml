@@ -42,8 +42,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: java-app
+      
+      - name: Rename .War file
+        run: move *.war ROOT.war
 
-      - name: Deploy to Azure Web App
+      - name: Deploy to Azure Web 
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
